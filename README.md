@@ -1,4 +1,4 @@
-readme:# 🐍📊 7 Days of Code: Python & Pandas
+# 🐍📊 7 Days of Code: Python & Pandas
 
 ## Sobre o desafio
 O **#7DaysOfCode** é uma iniciativa da Alura que propõe um desafio prático por dia, durante 7 dias consecutivos.  
