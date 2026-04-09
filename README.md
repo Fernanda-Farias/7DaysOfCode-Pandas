@@ -1,56 +1,65 @@
 # 🐍📊 7 Days of Code: Python & Pandas
 
 ## Sobre o desafio
-O **#7DaysOfCode** é uma iniciativa da Alura que propõe um desafio prático por dia, durante 7 dias consecutivos.  
-O objetivo é desenvolver habilidades reais de programação resolvendo problemas concretos, sem teoria em excesso, apenas prática.
 
-Nesta edição, o foco é **Python com Pandas**, uma das combinações mais utilizadas no dia a dia de quem trabalha com análise e ciência de dados.
+O **#7DaysOfCode** é uma iniciativa da Alura que propõe um desafio prático por dia, durante 7 dias consecutivos. O objetivo é desenvolver habilidades reais de programação resolvendo problemas concretos, sem teoria em excesso, apenas prática. Nesta edição, o foco é **Python com Pandas**, uma das combinações mais utilizadas no dia a dia de quem trabalha com análise e ciência de dados.
 
 ---
 
 ## Sobre este projeto
-Este notebook foi desenvolvido por **Fernanda Farias**, Analista e Cientista de Dados.  
 
+Este projeto foi desenvolvido por **Fernanda Farias**, Analista e Cientista de Dados.
 🔗 [Clique aqui para se conectar comigo no LinkedIn](https://www.linkedin.com/in/fernanda-fariasz/)
 
 ---
 
-## Dia 1: Importando e preparando os dados
+## Dias do desafio
 
-[Acessar notebook do Dia 1](https://github.com/Fernanda-Farias/7DaysOfCode-Pandas/blob/main/Dia_01_Importação_de_Dados_7DaysOfCode.ipynb)
+### 📁 Dia 1: Importando e preparando os dados
+[Acessar notebook](https://github.com/Fernanda-Farias/7DaysOfCode-Pandas/blob/main/Dia_01_Importa%C3%A7%C3%A3o_de_Dados_7DaysOfCode.ipynb)
 
-O primeiro dia do desafio trabalha uma etapa fundamental em qualquer projeto de dados: entender, importar e preparar os dados antes de qualquer análise.
+Etapa de coleta e organização dos dados de empréstimos e acervo das bibliotecas da UFRN.
 
-Os dados utilizados são referentes aos empréstimos e ao acervo das bibliotecas da UFRN (Universidade Federal do Rio Grande do Norte), e o desafio propõe trabalhar apenas com os últimos 10 anos disponíveis.
-
----
-
-## O que foi feito nessa etapa
-
-### 1. Importação dos dados
-Os dados de empréstimos estavam distribuídos em múltiplos arquivos CSV em um repositório público no GitHub.  
-Para evitar downloads manuais, os arquivos foram importados diretamente via API do GitHub.  
-
-Já os dados do acervo estavam disponíveis em um único arquivo `.parquet`, importado diretamente pelo link bruto do repositório.
+| Etapa | Descrição |
+|-------|-----------|
+| Importação | CSVs carregados via API do GitHub + arquivo `.parquet` pelo link bruto |
+| Unificação | Múltiplos arquivos consolidados em um único DataFrame |
+| Limpeza | Remoção de duplicatas e linhas completamente nulas |
+| Merge | Tabelas unidas pela coluna de código de barras |
 
 ---
 
-### 2. Unificação dos DataFrames
-Como os empréstimos estavam fragmentados em vários arquivos (um por período), o primeiro passo foi consolidar todos em um único DataFrame, facilitando a manipulação e análise dos dados de forma centralizada.
+### 📁 Dia 2: Limpeza e manipulação dos dados
+[Acessar notebook](https://github.com/Fernanda-Farias/7DaysOfCode-Pandas/blob/main/Dia_02_Limpeza_e_Manipula%C3%A7%C3%A3o_de_Dados_7DaysOfCode.ipynb)
+
+Etapa de transformação dos dados para que façam sentido no contexto da análise, incluindo o mapeamento dos materiais pela CDU (Classificação Decimal Universal).
+
+| Etapa | Descrição |
+|-------|-----------|
+| Exclusão | Coluna `registro_sistema` removida por ser irrelevante para a análise |
+| Conversão | Coluna `matricula_ou_siape` convertida de número para string |
+| Enriquecimento | Nova coluna `classe_cdu` criada com base nos códigos de localização |
+
+>  189.257 registros foram perdidos no merge do Dia 1 por não terem correspondência no acervo. O DataFrame passou de 2.261.779 para 2.072.522 linhas.
 
 ---
 
-### 3. Limpeza dos dados
-Dados do mundo real raramente chegam perfeitos.  
-Por isso, foram identificadas e tratadas:
-- linhas duplicadas  
-- linhas completamente nulas  
+### 📁 Dia 3: Explorando os dados
+[Acessar notebook](https://github.com/Fernanda-Farias/7DaysOfCode-Pandas/blob/main/Dia_03_An%C3%A1lise_Explorat%C3%B3ria_de_Dados_e_DateTime_7DaysOfCode.ipynb)
 
-Garantindo a integridade dos dados antes de qualquer análise.
+Início da análise exploratória, investigando como os empréstimos se comportam ao longo do tempo para apoiar decisões da diretoria da biblioteca.
+
+| Etapa | Descrição |
+|-------|-----------|
+| Por ano | Evolução do total de exemplares emprestados entre 2010 e 2020 |
+| Por mês | Identificação dos períodos de maior e menor demanda ao longo do ano |
+| Por hora | Mapeamento dos horários de pico para planejamento de atividades internas |
+
+>  Os dados de 2020 apresentam queda abrupta devido ao fechamento das bibliotecas durante a pandemia de COVID-19.
 
 ---
 
-### 4. Merge entre as tabelas
-Para enriquecer os dados de empréstimos com informações do acervo (como a biblioteca de origem do material e o tema ao qual ele pertence), as duas tabelas foram mescladas através da coluna de **código de barras**, que é a chave de relacionamento entre elas.
-
-
+### 📁 Dia 4: Em breve
+### 📁 Dia 5: Em breve
+### 📁 Dia 6: Em breve
+### 📁 Dia 7: Em breve
